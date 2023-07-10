@@ -43,18 +43,17 @@ public class BaiTapLon {
 	public static void nhapHoTenVaDiem(String[] hoten, double[] dToan, double[] dVan, double[] dAnh) {
 		System.out.println("*************************************************************");
 		try {
-			Scanner sc = new Scanner(System.in);
 			for (int i = 0; i < hoten.length; i++) {
+				Scanner sc = new Scanner(System.in);
 				System.out.println("Nhap du lieu cho sinh vien thu " + (i + 1));
 				System.out.print("Ho ten: ");
-				hoten[i] = sc.next();
+				hoten[i] = sc.nextLine();
 				System.out.print("Diem Toan: ");
 				dToan[i] = sc.nextDouble();
 				System.out.print("Diem Van: ");
 				dVan[i] = sc.nextDouble();
 				System.out.print("Diem Anh: ");
 				dAnh[i] = sc.nextDouble();
-
 			}
 		} catch (Exception e) {
 			System.out.println("DA XAY RA LOI TRONG QUA TRINH NHAP DU LIEU");

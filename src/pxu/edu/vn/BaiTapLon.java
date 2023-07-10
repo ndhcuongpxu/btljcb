@@ -21,6 +21,9 @@ public class BaiTapLon {
 		dTB = tinhDTB(dToan, dVan, dAnh);
 		// Xuat danh sach vua nhap
 		inDSSV(hoten, dToan, dVan, dAnh, dTB);
+		//Sap xep DSSV theo DTB
+		sapxepDSSV(hoten, dToan, dVan, dAnh, dTB);
+		inDSSV(hoten, dToan, dVan, dAnh, dTB);
 	}
 
 	// Ham nhap so luong sinh vien N nguyen duong
@@ -72,7 +75,32 @@ public class BaiTapLon {
 
 	// Ham sap xep sinh vien theo chieu giam dan cua diem trung binh
 	public static void sapxepDSSV(String[] hoten, double[] dToan, double[] dVan, double[] dAnh, double[] dTB) {
-
+		for(int i = 0; i < dTB.length - 1; i++) {
+			for(int j = i + 1; j < dTB.length; j++) {
+				if(dTB[i] < dTB[j]) {
+					//hoan vi DTB
+					double tam = dTB[i];
+					dTB[i] = dTB[j];
+					dTB[j] = tam;
+					//hoan vi Toan
+					tam = dToan[i];
+					dToan[i] = dToan[j];
+					dToan[j] = tam;
+					//hoan vi Van
+					tam = dVan[i];
+					dVan[i] = dVan[j];
+					dVan[j] = tam;
+					//hoan vi Anh
+					tam = dAnh[i];
+					dAnh[i] = dAnh[j];
+					dAnh[j] = tam;
+					//hoan vi hoten
+					String tam2 = hoten[i];
+					hoten[i] = hoten[j];
+					hoten[j] = tam2;
+				}
+			}
+		}
 	}
 
 	// Ham in danh sach sinh vien ra man hinh
@@ -87,7 +115,9 @@ public class BaiTapLon {
 	}
 
 	// Ham tim kiem sinh vien theo diem mon Toan
-	public static void timkiemDiem(String[] hoten, double[] dToan, double[] dVan, double[] dAnh, double[] dTB) {
+	public static void timkiemDiem(double diemcantim,
+			String[] hoten, double[] dToan, double[] dVan, 
+			double[] dAnh, double[] dTB) {
 
 	}
 

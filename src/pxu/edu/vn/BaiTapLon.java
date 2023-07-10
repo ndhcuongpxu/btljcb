@@ -16,6 +16,8 @@ public class BaiTapLon {
 		double[] dTB = new double[n];
 		//Goi ham nhap du lieu
 		nhapHoTenVaDiem(hoten, dToan, dVan, dAnh);
+		//Xuat danh sach vua nhap
+		inDSSV(hoten, dToan, dVan, dAnh, dTB);
 	}
 	
 	//Ham nhap so luong sinh vien N nguyen duong
@@ -67,7 +69,13 @@ public class BaiTapLon {
 										double[] dVan,
 										double[] dAnh,
 										double[] dTB) {
-		
+		System.out.println("*************************************************************");
+		System.out.println("\t\t\t DANH SAH SINH VIEN");
+		for(int i= 0; i < hoten.length; i++) {
+			System.out.println(hoten[i] + "; Toan: " + dToan[i] + "; Van: " + dVan[i] 
+										+ "; Anh: " + dAnh[i] + "; DTB: " + dTB[i]);			
+		}
+		System.out.println("*************************************************************");
 	}
 	//Ham in danh sach sinh vien ra man hinh
 	public static void inDSSV(String[] hoten,

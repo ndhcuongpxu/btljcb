@@ -36,7 +36,20 @@ public class BaiTapLon {
 										double[] dToan,
 										double[] dVan,
 										double[] dAnh) {
-		
+		System.out.println("*************************************************************");
+		Scanner sc = new Scanner(System.in);
+		for(int i = 0; i < hoten.length; i++) {
+			System.out.println("Nhap du lieu cho sinh vien thu " + i);
+			System.out.print("Ho ten: ");
+			hoten[i] = sc.next();
+			System.out.print("Diem Toan: ");
+			dToan[i] = sc.nextDouble();
+			System.out.print("Diem Van: ");
+			dVan[i] = sc.nextDouble();
+			System.out.print("Diem Anh: ");
+			dAnh[i] = sc.nextDouble();
+		}
+		System.out.println("*************************************************************");
 	}
 	//Ham tinh diem trung binh
 //	public static double[] tinhDTB(double[] dToan, double[] dVan, double[] dAnh) {

@@ -21,9 +21,12 @@ public class BaiTapLon {
 		dTB = tinhDTB(dToan, dVan, dAnh);
 		// Xuat danh sach vua nhap
 		inDSSV(hoten, dToan, dVan, dAnh, dTB);
-		//Sap xep DSSV theo DTB
+		// Sap xep DSSV theo DTB
 		sapxepDSSV(hoten, dToan, dVan, dAnh, dTB);
 		inDSSV(hoten, dToan, dVan, dAnh, dTB);
+		//tim kiem diem
+		timkiemDiem(hoten, dToan, dVan, dAnh, dTB);
+	
 	}
 
 	// Ham nhap so luong sinh vien N nguyen duong
@@ -75,26 +78,26 @@ public class BaiTapLon {
 
 	// Ham sap xep sinh vien theo chieu giam dan cua diem trung binh
 	public static void sapxepDSSV(String[] hoten, double[] dToan, double[] dVan, double[] dAnh, double[] dTB) {
-		for(int i = 0; i < dTB.length - 1; i++) {
-			for(int j = i + 1; j < dTB.length; j++) {
-				if(dTB[i] < dTB[j]) {
-					//hoan vi DTB
+		for (int i = 0; i < dTB.length - 1; i++) {
+			for (int j = i + 1; j < dTB.length; j++) {
+				if (dTB[i] < dTB[j]) {
+					// hoan vi DTB
 					double tam = dTB[i];
 					dTB[i] = dTB[j];
 					dTB[j] = tam;
-					//hoan vi Toan
+					// hoan vi Toan
 					tam = dToan[i];
 					dToan[i] = dToan[j];
 					dToan[j] = tam;
-					//hoan vi Van
+					// hoan vi Van
 					tam = dVan[i];
 					dVan[i] = dVan[j];
 					dVan[j] = tam;
-					//hoan vi Anh
+					// hoan vi Anh
 					tam = dAnh[i];
 					dAnh[i] = dAnh[j];
 					dAnh[j] = tam;
-					//hoan vi hoten
+					// hoan vi hoten
 					String tam2 = hoten[i];
 					hoten[i] = hoten[j];
 					hoten[j] = tam2;
@@ -115,10 +118,30 @@ public class BaiTapLon {
 	}
 
 	// Ham tim kiem sinh vien theo diem mon Toan
-	public static void timkiemDiem(double diemcantim,
-			String[] hoten, double[] dToan, double[] dVan, 
-			double[] dAnh, double[] dTB) {
-
+	public static void timkiemDiem(String[] hoten, double[] dToan, double[] dVan, double[] dAnh,
+			double[] dTB) {
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
+		double diemcantim;
+		try {
+			do {
+				System.out.print("Diem Toan can tim: ");
+				diemcantim = sc.nextDouble();
+			}while(diemcantim < 0.0 || diemcantim > 10.0);
+			
+			for (int i = 0; i < dToan.length; i++) {
+				if (dToan[i] == diemcantim) {
+					System.out.println(hoten[i] + "; Toan: " + dToan[i] + "; Van: " + dVan[i] + "; Anh: " + dAnh[i]
+							+ "; DTB: " + dTB[i]);
+					count = count + 1;
+				}
+			}
+			if(count == 0) {
+				System.out.println("KHONG TIM THAY");
+			}
+		}catch(Exception e){
+			System.out.println("DA XAY RA LOI TRONG QUA TRINH NHAP DU LIEU");
+		}	
 	}
 
 	// Ham tim kiem sinh vien theo ho ten

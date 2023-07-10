@@ -1,5 +1,7 @@
 package pxu.edu.vn;
 
+import java.util.Scanner;
+
 public class BaiTapLon {
 
 	public static void main(String[] args) {
@@ -9,9 +11,18 @@ public class BaiTapLon {
 	
 	//Ham nhap so luong sinh vien N nguyen duong
 	public static int nhapSoLuongSinhVien() {
-		int n;
-		
-		return n;
+		try {
+			int n;
+			Scanner sc = new Scanner(System.in);
+			do {
+				System.out.print("Nhap so luong sinh vien n = ");
+				n = sc.nextInt();
+			}while( n <= 0);
+			return n;
+		}catch(Exception e) {
+			System.out.println("DA XAY RA LOI TRONG QUA TRINH NHAP DU LIEU");
+			return -1;
+		}
 	}
 	//Ham nhap ho ten, diem Toan, Van Anh
 	public static void nhapHoTenVaDiem(String[] hoten,

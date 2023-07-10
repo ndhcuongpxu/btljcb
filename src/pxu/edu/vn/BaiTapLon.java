@@ -6,7 +6,14 @@ public class BaiTapLon {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		int n = nhapSoLuongSinhVien();
+		System.out.println("n = " + n);
+		//Tao cac mang 1 chieu chua hoten, dToan, dVan, dAnh va DTB
+		String[] hoten = new String[n];
+		double[] dToan = new double[n];
+		double[] dVan = new double[n];
+		double[] dAnh = new double[n];
+		double[] dTB = new double[n];
 	}
 	
 	//Ham nhap so luong sinh vien N nguyen duong
@@ -32,9 +39,9 @@ public class BaiTapLon {
 		
 	}
 	//Ham tinh diem trung binh
-	public static double[] tinhDTB(double[] dToan, double[] dVan, double[] dAnh) {
-		
-	}
+//	public static double[] tinhDTB(double[] dToan, double[] dVan, double[] dAnh) {
+//		
+//	}
 	//Ham sap xep sinh  vien theo chieu giam dan cua diem trung binh
 	public static void sapxepDSSV(String[] hoten,
 										double[] dToan,

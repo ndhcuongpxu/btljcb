@@ -14,6 +14,8 @@ public class BaiTapLon {
 		double[] dVan = new double[n];
 		double[] dAnh = new double[n];
 		double[] dTB = new double[n];
+		//Goi ham nhap du lieu
+		nhapHoTenVaDiem(hoten, dToan, dVan, dAnh);
 	}
 	
 	//Ham nhap so luong sinh vien N nguyen duong
@@ -37,17 +39,21 @@ public class BaiTapLon {
 										double[] dVan,
 										double[] dAnh) {
 		System.out.println("*************************************************************");
-		Scanner sc = new Scanner(System.in);
-		for(int i = 0; i < hoten.length; i++) {
-			System.out.println("Nhap du lieu cho sinh vien thu " + i);
-			System.out.print("Ho ten: ");
-			hoten[i] = sc.next();
-			System.out.print("Diem Toan: ");
-			dToan[i] = sc.nextDouble();
-			System.out.print("Diem Van: ");
-			dVan[i] = sc.nextDouble();
-			System.out.print("Diem Anh: ");
-			dAnh[i] = sc.nextDouble();
+		try {
+			Scanner sc = new Scanner(System.in);
+			for(int i = 0; i < hoten.length; i++) {
+				System.out.println("Nhap du lieu cho sinh vien thu " + (i + 1));
+				System.out.print("Ho ten: ");
+				hoten[i] = sc.next();
+				System.out.print("Diem Toan: ");
+				dToan[i] = sc.nextDouble();
+				System.out.print("Diem Van: ");
+				dVan[i] = sc.nextDouble();
+				System.out.print("Diem Anh: ");
+				dAnh[i] = sc.nextDouble();
+			}
+		}catch(Exception e) {
+			System.out.println("DA XAY RA LOI TRONG QUA TRINH NHAP DU LIEU");
 		}
 		System.out.println("*************************************************************");
 	}
